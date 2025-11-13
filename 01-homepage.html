@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - Home</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      NEW: Link to the global layout stylesheet 
+      Removes all the inline <style> tags
+    -->
+    <link rel="stylesheet" href="layout.css">
+    
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- 
+          NEW: Navbar Placeholder
+          The 'data-active-link' attribute tells layout.js which link to highlight.
+        -->
+        <div id="navbar-placeholder" data-active-link="home">
+            <!-- The navigation bar will be loaded here by layout.js -->
+            <div class="p-8 text-center text-gray-500">Loading Navigation...</div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-1 order-1 lg:order-2 
+                     p-4 md:p-8 
+                     pb-24 lg:pb-8"> <!-- Padding at bottom for mobile nav -->
+            
+            <!-- 
+              NEW: Header Placeholder
+              The main header will be loaded here by layout.js
+            -->
+            <div id="header-placeholder">
+                <div class="p-8 text-center text-gray-500">Loading Header...</div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="mb-8">
+                <div class="relative">
+                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                        <!-- Search Icon -->
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+                    </span>
+                    <input type="text" placeholder="Search for your service" 
+                           class="w-full py-3 pl-12 pr-4 bg-white border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+            </div>
+
+            <!-- Section: Book Your Services -->
+            <section>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Book Your Services</h2>
+                
+                <!-- Service Grid -->
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    
+                    <!-- Service Card: Ambulance -->
+                    <a href="02-ambulance-booking-main.html" class="service-card bg-white rounded-lg shadow-md overflow-hidden text-center p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Emergency.jpg" alt="Ambulance" class="w-20 h-20 object-cover mx-auto rounded-full border-4 border-blue-50" onerror="this.src='https://placehold.co/120x120/EBF8FF/3182CE?text=Ambulance'">
+                        <h3 class="text-sm font-semibold text-gray-900 mt-3">Ambulance</h3>
+                    </a>
+
+                    <!-- Service Card: Homecare Nursing -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden text-center p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Homecare.jpg" alt="Homecare Nursing" class="w-20 h-20 object-cover mx-auto rounded-full border-4 border-blue-50" onerror="this.src='https://placehold.co/120x120/EBF8FF/3182CE?text=Homecare'">
+                        <h3 class="text-sm font-semibold text-gray-900 mt-3">Homecare Nursing</h3>
+                    </a>
+
+                    <!-- Service Card: Physiotherapy -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden text-center p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Physio.jpg" alt="Physiotherapy" class="w-20 h-20 object-cover mx-auto rounded-full border-4 border-blue-50" onerror="this.src='https://placehold.co/120x120/EBF8FF/3182CE?text=Physio'">
+                        <h3 class="text-sm font-semibold text-gray-900 mt-3">Physiotherapy</h3>
+                    </a>
+
+                    <!-- Service Card: Lab -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden text-center p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Lab.jpg" alt="Lab" class="w-20 h-20 object-cover mx-auto rounded-full border-4 border-blue-50" onerror="this.src='https://placehold.co/120x120/EBF8FF/3182CE?text=Lab'">
+                        <h3 class="text-sm font-semibold text-gray-900 mt-3">Lab</h3>
+                    </a>
+
+                    <!-- Service Card: Funeral Service -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden text-center p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Funeral.jpg" alt="Funeral Service" class="w-20 h-20 object-cover mx-auto rounded-full border-4 border-blue-50" onerror="this.src='https://placehold.co/120x120/EBF8FF/3182CE?text=Funeral'">
+                        <h3 class="text-sm font-semibold text-gray-900 mt-3">Funeral Service</h3>
+                    </a>
+
+                    <!-- Service Card: Emergency -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden text-center p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Emergency.jpg" alt="Emergency" class="w-20 h-20 object-cover mx-auto rounded-full border-4 border-red-50" onerror="this.src='https://placehold.co/120x120/FEF2F2/DC2626?text=Emergency'">
+                        <h3 class="text-sm font-semibold text-gray-900 mt-3">Emergency</h3>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- Section: Listing -->
+            <section class="mt-12">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Listings</h2>
+                
+                <!-- Listing Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                    <!-- Listing Card: Speciality Hospital -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Hospital.jpg" alt="Speciality Hospital" class="w-full h-32 object-cover" onerror="this.src='https://placehold.co/300x200/E6FFFA/2C7A7B?text=Hospital'">
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-900">Speciality Hospital</h3>
+                            <p class="text-xs text-gray-600 mt-1">Find top-rated hospitals</p>
+                        </div>
+                    </a>
+
+                    <!-- Listing Card: Speciality Clinic -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Clinic.jpg" alt="Speciality Clinic" class="w-full h-32 object-cover" onerror="this.src='https://placehold.co/300x200/E6FFFA/2C7A7B?text=Clinic'">
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-900">Speciality Clinic</h3>
+                            <p class="text-xs text-gray-600 mt-1">Nearby specialist clinics</p>
+                        </div>
+                    </a>
+
+                    <!-- Listing Card: Blood Bank -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Blood-Bank.jpg" alt="Blood Bank" class="w-full h-32 object-cover" onerror="this.src='https://placehold.co/300x200/E6FFFA/2C7A7B?text=Blood+Bank'">
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-900">Blood Bank</h3>
+                            <p class="text-xs text-gray-600 mt-1">Locate blood banks</p>
+                        </div>
+                    </a>
+
+                    <!-- Listing Card: Pharmacy -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Pharmacy.jpg" alt="Pharmacy" class="w-full h-32 object-cover" onerror="this.src='https://placehold.co/300x200/E6FFFA/2C7A7B?text=Pharmacy'">
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-900">Pharmacy</h3>
+                            <p class="text-xs text-gray-600 mt-1">24/7 pharmacies near you</p>
+                        </div>
+                    </a>
+
+                    <!-- Listing Card: Medical Equipments -->
+                    <a href="#" class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <img src="assets/Equipments.jpg" alt="Medical Equipments" class="w-full h-32 object-cover" onerror="this.src='https://placehold.co/300x200/E6FFFA/2C7A7B?text=Equipment'">
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-900">Medical Equipments</h3>
+                            <p class="text-xs text-gray-600 mt-1">Rent or buy equipment</p>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- 
+      NEW: Global layout.js script
+      This will load the components and provide the showFeedback function
+    -->
+    <script src="layout.js"></script>
+
+    <!-- Page-specific script -->
+    <script>
+        // NEW: Wait for the custom event 'commonComponentsLoaded' from layout.js
+        document.addEventListener('commonComponentsLoaded', function() {
+            
+            // This code runs only AFTER the navbar and header are loaded.
+            
+            // The showFeedback function is now global (defined in layout.js)
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    
+                    // Only prevent default for non-ambulance cards
+                    if (!card.href || !card.href.endsWith('02-ambulance-booking-main.html')) {
+                        e.preventDefault(); // Prevent default link behavior
+                    } else {
+                        // This is the ambulance card, let it navigate
+                        return;
+                    }
+                    
+                    const serviceNameElement = card.querySelector('h3');
+                    if (!serviceNameElement) return; // Exit if no h3 found
+                    
+                    const serviceName = serviceNameElement.textContent;
+                    
+                    console.log('User selected:', serviceName);
+                    
+                    // Use the global showFeedback function
+                    showFeedback(`Selected: ${serviceName}. (Booking page not yet implemented)`);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

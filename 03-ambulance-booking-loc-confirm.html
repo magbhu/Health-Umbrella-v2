@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - Confirm Location</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      NEW: Link to the global layout stylesheet 
+      Removes all the inline <style> tags
+    -->
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- 
+          NEW: Navbar Placeholder
+          The 'data-active-link' attribute tells layout.js which link to highlight.
+        -->
+        <div id="navbar-placeholder" data-active-link="home">
+            <!-- The navigation bar will be loaded here by layout.js -->
+            <div class="p-8 text-center text-gray-500">Loading Navigation...</div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-1 order-1 lg:order-2 
+                     p-4 md:p-8 
+                     pb-24 lg:pb-8"> <!-- Padding at bottom for mobile nav -->
+            
+            <!-- 
+              NEW: Header Placeholder
+              The main header will be loaded here by layout.js
+            -->
+            <div id="header-placeholder">
+                <div class="p-8 text-center text-gray-500">Loading Header...</div>
+            </div>
+
+            <!-- Confirm Location Content -->
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Confirm Location</h2>
+
+                <!-- Location Summary Card -->
+                <section class="mb-6 bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex">
+                        <!-- Icons -->
+                        <div class="flex flex-col items-center mr-4">
+                            <div class="w-5 h-5 rounded-full bg-green-500 border-2 border-green-200"></div>
+                            <div class="w-px flex-1 border-l-2 border-dashed border-gray-300 my-2"></div>
+                            <div class="w-5 h-5 rounded-full bg-red-500 border-2 border-red-200"></div>
+                        </div>
+                        <!-- Details -->
+                        <div class="flex-1 space-y-4">
+                            <!-- Pickup Location -->
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-medium">Pickup</p>
+                                    <!-- This address should match 02-ambulance-booking-main.html -->
+                                    <p class="font-semibold text-gray-900 leading-snug">Sairam Flats , Arcot Road, Valasravakkam , chennai</p>
+                                </div>
+                                <div class="flex space-x-1 pl-2">
+                                    <button class="p-2 text-gray-500 hover:text-gray-800 rounded-full hover:bg-gray-100">
+                                        <!-- Close Icon -->
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 rounded-full hover:bg-indigo-50">
+                                        <!-- Map Pin Icon -->
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Drop-off Location -->
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-medium">Dropoff</p>
+                                    <!-- This address should match 02-ambulance-booking-main.html -->
+                                    <p class="font-semibold text-gray-900 leading-snug">MIOT International , Manappakkam, Chennai</p>
+                                </div>
+                                <div class="flex space-x-1 pl-2">
+                                    <button class="p-2 text-gray-500 hover:text-gray-800 rounded-full hover:bg-gray-100">
+                                        <!-- Close Icon -->
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 rounded-full hover:bg-indigo-50">
+                                        <!-- Map Pin Icon -->
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Map Placeholder -->
+                <section class="mb-8 rounded-lg shadow-md overflow-hidden relative border-4 border-white">
+									 
+                    <img src="assets/mapholder.jpg" 
+                         onerror="this.src='https://placehold.co/800x600/E0E7FF/4F46E5?text=Google+Map+Placeholder&font=inter'"
+                         alt="Map showing route from pickup to dropoff" 
+                         class="w-full h-64 md:h-96 object-cover">
+                    
+                    <!-- Refresh Button -->
+                    <button class="absolute top-4 right-4 bg-white p-3 rounded-full shadow-lg text-indigo-600 hover:bg-gray-50 transition-all">
+                        <!-- Refresh Icon -->
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                    </button>
+                </section>
+
+                <!-- Confirm Button -->
+                <section class="mt-8">
+                    <button id="confirm-button" class="w-full bg-indigo-600 text-white font-semibold py-4 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Confirm Location
+                    </button>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Click Feedback Element (Handled by layout.js) -->
+    <!-- <div id="click-feedback" ...></div> -->
+
+    <!-- 
+      NEW: Global layout.js script
+      This will load the components and provide the showFeedback function
+    -->
+    <script src="layout.js"></script>
+
+    <!-- Page-specific script -->
+    <script>
+        // NEW: Wait for the custom event 'commonComponentsLoaded' from layout.js
+        document.addEventListener('commonComponentsLoaded', function() {
+            
+            // This code runs only AFTER the navbar and header are loaded.
+            
+            // The showFeedback function is now global (defined in layout.js)
+
+            // Handle Confirm Button Click
+            document.getElementById('confirm-button').addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent form submission for demo
+        
+                console.log('Location Confirmed');
+        
+                // In a real app, this would trigger the search for ambulances
+                // showFeedback('Location Confirmed! Finding nearest ambulance...');
+                window.location.href = '04-ambulance-booking-vehicle-type-cost.html';
+            });
+
+        }); // End of 'commonComponentsLoaded' listener
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - My Bookings</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      NEW: Link to the global layout stylesheet 
+      Removes all the inline <style> tags
+    -->
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- 
+          NEW: Navbar Placeholder
+          The 'data-active-link' attribute tells layout.js which link to highlight.
+          This page's active link is 'bookings'.
+        -->
+        <div id="navbar-placeholder" data-active-link="bookings">
+            <!-- The navigation bar will be loaded here by layout.js -->
+            <div class="p-8 text-center text-gray-500">Loading Navigation...</div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-1 order-1 lg:order-2 
+                     p-4 md:p-8 
+                     pb-24 lg:pb-8"> <!-- Padding at bottom for mobile nav -->
+            
+            <!-- 
+              NEW: Header Placeholder
+              The main header will be loaded here by layout.js
+            -->
+            <div id="header-placeholder">
+                <div class="p-8 text-center text-gray-500">Loading Header...</div>
+            </div>
+
+            <!-- Booking List Content -->
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Booking List</h2>
+
+                <!-- Tabs -->
+                <nav class="flex space-x-2 mb-6" aria-label="Tabs">
+                    <!-- Tab: Emergency Bookings (Active) -->
+                    <button class="tab-button active flex-1 px-4 py-3 text-sm font-medium rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Emergency Bookings
+                    </button>
+                    
+                    <!-- Tab: Schedule Bookings -->
+                    <button class="tab-button flex-1 px-4 py-3 text-sm font-medium rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Schedule Bookings
+                    </button>
+
+                    <!-- Tab: Completed -->
+                    <button class="tab-button flex-1 px-4 py-3 text-sm font-medium rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Completed
+                    </button>
+                </nav>
+
+                <!-- Booking Card -->
+                <!-- The border color (green-300) is taken from the screenshot -->
+                <section class="bg-white rounded-lg shadow-md border-t-4 border-green-300 p-6">
+                    <!-- Card Header -->
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center space-x-3">
+                            <!-- UPDATED Asset Path -->
+                            <img src="assets/bls-ambulance.jpg" alt="BLS Ambulance" class="w-16 h-10 object-cover rounded-lg" onerror="this.src='https://placehold.co/64x40/F3F4F6/9CA3AF?text=BLS'">
+                            <div>
+                                <h3 class="font-bold text-gray-900">Booking Id : REQ00915</h3>
+                                <p class="text-sm text-gray-600">Basic Life Support (BLS) Tempo Traveller</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold bg-pink-100 text-pink-600 px-2 py-1 rounded-full">Emergency</span>
+                    </div>
+
+                    <!-- Location Details -->
+                    <div class="mb-4">
+                        <!-- Pickup -->
+                        <div class="flex items-start mb-3">
+                            <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase font-medium">Pickup</h4>
+                                <!-- UPDATED ADDRESS -->
+                                <p class="text-sm font-semibold text-gray-800 leading-snug">Sairam Flats , Arcot Road, Valasravakkam , chennai</p>
+                            </div>
+                        </div>
+                        <!-- Drop -->
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-red-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase font-medium">Drop</h4>
+                                <!-- UPDATED ADDRESS -->
+                                <p class="text-sm font-semibold text-gray-800 leading-snug">MIOT International , Manappakkam, Chennai</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="border-t border-gray-200 pt-4 mb-4">
+                        <div class="grid grid-cols-2">
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase font-medium">Name</h4>
+                                <p class="text-sm font-semibold text-gray-800">-</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-gray-500 uppercase font-medium">Contact</h4>
+                                <p class="text-sm font-semibold text-gray-800">-</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer: Total & Buttons -->
+                    <div class="border-t border-gray-200 pt-4">
+                        <!-- Total Amount -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-base font-bold text-gray-900">Total Amount</span>
+                            <span class="text-xl font-bold text-indigo-600">₹ 2500.00</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <button id="view-details-btn" class="w-full bg-white text-indigo-600 font-semibold py-3 px-4 rounded-lg shadow-sm border border-indigo-600 hover:bg-indigo-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                                View Details
+                            </button>
+							
+							
+                            <button id="track-ambulance-btn" class="w-full bg-gray-300 text-gray-500 font-semibold py-3 px-4 rounded-lg shadow-sm cursor-not-allowed flex items-center justify-center space-x-2">
+                                <!-- Truck Icon -->
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                                <span>Track Ambulance</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- More booking cards would go here... -->
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Click Feedback Element (Handled by layout.js) -->
+    <!-- <div id="click-feedback" ...></div> -->
+
+    <!-- 
+      NEW: Global layout.js script
+      This will load the components and provide the showFeedback function
+    -->
+    <script src="layout.js"></script>
+
+    <!-- Page-specific script -->
+    <script>
+        // NEW: Wait for the custom event 'commonComponentsLoaded' from layout.js
+        document.addEventListener('commonComponentsLoaded', function() {
+            
+            // This code runs only AFTER the navbar and header are loaded.
+            
+            // The showFeedback function is now global (defined in layout.js)
+
+            // Handle Tab Clicks
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove 'active' class from all tabs
+                    document.querySelectorAll('.tab-button').forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.add('bg-white', 'text-gray-600');
+                    });
+                    
+                    // Add 'active' class to the clicked tab
+                    button.classList.add('active');
+                    button.classList.remove('bg-white', 'text-gray-600');
+
+                    const tabName = button.textContent.trim();
+                    console.log('Switched to tab:', tabName);
+                    showFeedback(`Switched to ${tabName}`);
+                    // In a real app, you would fetch and display the bookings for this tab
+                });
+            });
+
+            // Handle Button Clicks on Card
+            document.getElementById('view-details-btn').addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('View Details clicked');
+                showFeedback('Loading booking details... (Demo only)');
+            });
+        
+            document.getElementById('track-ambulance-btn').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (e.currentTarget.disabled) {
+                    console.log('Track Ambulance is disabled');
+                    showFeedback('Tracking is not available for this booking.');
+                } else {
+                    console.log('Track Ambulance clicked');
+                    // showFeedback('Opening live tracking... (Demo only)');
+                    window.location.href = '07-booking-connector.html'; // Link back to the tracking page
+                }
+            });
+
+            // Set the track button to ENABLED and change styling
+            const trackBtn = document.getElementById('track-ambulance-btn');
+            trackBtn.disabled = false;
+            trackBtn.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+            trackBtn.classList.add('bg-green-600', 'text-white', 'hover:bg-green-700');  
+        
+        }); // End of 'commonComponentsLoaded' listener
+    </script>
+
+</body>
+</html>

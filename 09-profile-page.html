@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - My Profile</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      NEW: Link to the global layout stylesheet 
+      Removes all the inline <style> tags
+    -->
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- 
+          NEW: Navbar Placeholder
+          The 'data-active-link' attribute tells layout.js which link to highlight.
+          This page's active link is 'profile'.
+        -->
+        <div id="navbar-placeholder" data-active-link="profile">
+            <!-- The navigation bar will be loaded here by layout.js -->
+            <div class="p-8 text-center text-gray-500">Loading Navigation...</div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-1 order-1 lg:order-2 
+                     pb-24 lg:pb-0"> <!-- Padding at bottom for mobile nav -->
+            
+            <!-- 
+              Profile Header (Unique to this page)
+              We keep this header because it's not the main shared one.
+            -->
+            <header class="profile-header-bg h-40 lg:h-56 flex items-center justify-center relative">
+                <h1 class="text-3xl lg:text-4xl font-bold text-white">My Profile</h1>
+            </header>
+
+            <!-- Profile Content -->
+            <div class="max-w-2xl mx-auto p-4 md:p-8 -mt-16">
+                
+                <!-- Profile Card -->
+                <section class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center text-center mb-8 relative">
+                    <!-- Profile Picture Placeholder -->
+                    <div class="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center -mt-20 border-4 border-white mb-4 relative">
+                        <svg class="w-20 h-20 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <!-- Edit Button -->
+                        <button class="absolute bottom-1 right-1 bg-indigo-600 text-white p-2 rounded-full shadow-md hover:bg-indigo-700">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Magesh</h2>
+                </section>
+
+                <!-- Profile Options List -->
+                <section class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <nav class="divide-y divide-gray-200">
+                        
+                        <!-- My Profile -->
+                        <a href="#" class="profile-option flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="text-base font-medium">My Profile</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- Emergency Contact -->
+                        <a href="#" class="profile-option flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span class="text-base font-medium">Emergency Contact</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- My Reports -->
+                        <a href="#" class="profile-option flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                            <span class="text-base font-medium">My Reports</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- Terms and Conditions -->
+                        <a href="#" class="profile-option flex items-center p-5 text-gray-700 hover:bg-gray-50 transition-all">
+                            <svg class="w-6 h-6 text-gray-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <span class="text-base font-medium">Terms and Conditions</span>
+                            <svg class="w-5 h-5 text-gray-400 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+
+                        <!-- Logout -->
+                        <a href="00-login-page.html" class="flex items-center p-5 text-red-600 hover:bg-red-50 transition-all">
+                            <svg class="w-6 h-6 text-red-500 mr-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                            <span class="text-base font-medium">Logout</span>
+                        </a>
+
+                    </nav>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Click Feedback Element (Handled by layout.js) -->
+    <!-- <div id="click-feedback" ...></div> -->
+
+    <!-- 
+      NEW: Global layout.js script
+      This will load the components and provide the showFeedback function
+    -->
+    <script src="layout.js"></script>
+
+    <!-- Page-specific script -->
+    <script>
+        // NEW: Wait for the custom event 'commonComponentsLoaded' from layout.js
+        document.addEventListener('commonComponentsLoaded', function() {
+            
+            // This code runs only AFTER the navbar is loaded.
+            
+            // The showFeedback function is now global (defined in layout.js)
+
+            // Add listeners to profile options (except logout)
+            document.querySelectorAll('a.profile-option').forEach(link => {
+                // Check if the link is the logout link
+                if (link.href.endsWith('00-login-page.html')) {
+                    return; // Don't add feedback to the logout link
+                }
+                
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent navigation
+                    const optionName = link.querySelector('span').textContent;
+                    console.log('Clicked:', optionName);
+                    showFeedback(`Loading ${optionName}... (Demo only)`);
+                });
+            });
+
+        }); // End of 'commonComponentsLoaded' listener
+    </script>
+
+</body>
+</html>

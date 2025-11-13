@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - Select Vehicle</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      MODIFIED: Google Maps API Script 
+      The placeholder '__GOOGLE_MAPS_API_KEY__' should be replaced by your GitHub Actions workflow or manually.
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=__GOOGLE_MAPS_API_KEY__&callback=initMap&libraries=routes&v=weekly" async defer></script>
+
+    <!-- 
+      NEW: Link to the global layout stylesheet 
+      Removes all the inline <style> tags
+    -->
+    <link rel="stylesheet" href="layout.css">
+    
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- 
+          NEW: Navbar Placeholder
+          The 'data-active-link' attribute tells layout.js which link to highlight.
+        -->
+        <div id="navbar-placeholder" data-active-link="home">
+            <!-- The navigation bar will be loaded here by layout.js -->
+            <div class="p-8 text-center text-gray-500">Loading Navigation...</div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-1 order-1 lg:order-2 
+                     p-4 md:p-8 
+                     pb-24 lg:pb-8"> <!-- Padding at bottom for mobile nav -->
+            
+            <!-- 
+              NEW: Header Placeholder
+              The main header will be loaded here by layout.js
+            -->
+            <div id="header-placeholder">
+                <div class="p-8 text-center text-gray-500">Loading Header...</div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="max-w-2xl mx-auto">
+
+                <!-- Location Summary Card -->
+                <section class="mb-6 bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex">
+                        <!-- Icons -->
+                        <div class="flex flex-col items-center mr-4">
+                            <div class="w-5 h-5 rounded-full bg-green-500 border-2 border-green-200"></div>
+                            <div class="w-px flex-1 border-l-2 border-dashed border-gray-300 my-2"></div>
+                            <div class="w-5 h-5 rounded-full bg-red-500 border-2 border-red-200"></div>
+                        </div>
+                        <!-- Details -->
+                        <div class="flex-1 space-y-4">
+                            <!-- Pickup Location -->
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-medium">Pickup</p>
+                                <!-- UPDATED ADDRESS -->
+                                <p class="font-semibold text-gray-900 leading-snug">Sairam Flats , Arcot Road, Valasravakkam , chennai</p>
+                            </div>
+                            <!-- Drop-off Location -->
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-medium">Dropoff</p>
+                                <!-- UPDATED ADDRESS -->
+                                <p class="font-semibold text-gray-900 leading-snug">MIOT International , Manappakkam, Chennai</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 
+                  MODIFIED: Google Map Container 
+                  Replaces the <img> placeholder
+                -->
+                <section class="mb-8 rounded-lg shadow-md overflow-hidden relative border-4 border-white">
+                    <div id="map">
+                        <!-- Map will be rendered here -->
+                        <div class.="w-full h-full flex items-center justify-center bg-indigo-100 text-indigo-600">
+                            Loading Map...
+                        </div>
+                    </div>
+                    
+                    <!-- Refresh Button -->
+                    <button class="absolute top-4 right-4 bg-white p-3 rounded-full shadow-lg text-indigo-600 hover:bg-gray-50 transition-all" onclick="calculateAndDisplayRoute()">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                    </button>
+                </section>
+
+                <!-- Select an Ambulance -->
+                <section>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Select an Ambulance</h2>
+                    
+                    <!-- Category Header -->
+                    <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center mb-4">
+                        <div class="flex items-center space-x-3">
+                            <img src="assets/ambulance-icon.png" alt="Ambulance Icon" class="w-10 h-10 rounded-lg" onerror="this.src='https://placehold.co/40x40/EBF8FF/3182CE?text=Amb'">
+                            <span class="font-semibold text-gray-800">Patient Transfer</span>
+                        </div>
+                        <button class="p-2 text-gray-500">
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                        </button>
+                    </div>
+
+                    <!-- Ambulance Options -->
+                    <div class="space-y-4">
+                        
+                        <!-- Option: Small -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_small" class="hidden ambulance-option" checked>
+                            <label for="amb_small" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">25</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="assets/small-ambulance.jpg" alt="Small Ambulance" class="w-16 h-10 object-cover rounded" onerror="this.src='https://placehold.co/64x40/F3F4F6/9CA3AF?text=Omni'">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Small</h3>
+                                                    <p class="text-xs text-gray-600">Omni / Eco Vehicle</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">30 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 500</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher, Wheelchai...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Option: Large -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_large" class="hidden ambulance-option">
+                            <label for="amb_large" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">9</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="assets/large-ambulance.jpg" alt="Large Ambulance" class="w-16 h-10 object-cover rounded" onerror="this.src='https://placehold.co/64x40/F3F4F6/9CA3AF?text=Tempo'">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Large</h3>
+                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">27 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 1500</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher,...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Option: Advanced Life Support (ALS) -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_als" class="hidden ambulance-option">
+                            <label for="amb_als" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">16</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="assets/als-ambulance.jpg" alt="ALS Ambulance" class="w-16 h-10 object-cover rounded" onerror="this.src='https://placehold.co/64x40/F3F4F6/9CA3AF?text=ALS'">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Advanced Life Support (ALS)</h3>
+                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">24 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 3000</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Advanced ...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Option: Basic Life Support (BLS) -->
+                        <div>
+                            <input type="radio" name="ambulance_type" id="amb_bls" class="hidden ambulance-option">
+                            <label for="amb_bls" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
+                                <div class="flex space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">9</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <div class="flex items-center space-x-3">
+                                                <img src="assets/bls-ambulance.jpg" alt="BLS Ambulance" class="w-16 h-10 object-cover rounded" onerror="this.src='https://placehold.co/64x40/F3F4F6/9CA3AF?text=BLS'">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Basic Life Support (BLS)</h3>
+                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right flex-shrink-0">
+                                                <p class="text-sm font-semibold text-pink-600">462 mins</p>
+                                                <p class="text-lg font-bold text-indigo-600">₹ 2500</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher, W...</p>
+                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Book Now Button -->
+                <section class="mt-8">
+                    <button id="book-now-button" class="w-full bg-indigo-600 text-white font-semibold py-4 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Book Now
+                    </button>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Click Feedback Element (Handled by layout.js) -->
+    <!-- <div id="click-feedback" ...></div> -->
+
+    <!-- 
+      NEW: Global layout.js script
+      This will load the components and provide the showFeedback function
+    -->
+    <script src="layout.js"></script>
+
+    <!-- Page-specific script -->
+    <script>
+        
+        // --- GOOGLE MAPS SCRIPT ---
+        // These are defined globally so the callback can find them
+        let map;
+        let directionsService;
+        let directionsRenderer;
+        
+        // NEW: Check if the API key placeholder is still present
+        // This key is set in the <head> script tag
+        const apiKey = "AIzaSyBrgCD_iogMvjV11ZaCGsCNEqH_kqvlUqI"; // This should match the placeholder in the <head>
+        
+        /**
+         * This function is called by the Google Maps script tag's callback
+         */
+        function initMap() {
+            // Don't run if the key is the placeholder
+            if (apiKey === "__GOOGLE_MAPS_API_KEY__" || apiKey === "YOUR_API_KEY_HERE") return;
+
+            try {
+                directionsService = new google.maps.DirectionsService();
+                directionsRenderer = new google.maps.DirectionsRenderer({
+                    suppressMarkers: false, // Show A/B markers
+                    polylineOptions: {
+                        strokeColor: '#4F46E5', // Indigo color for route
+                        strokeWeight: 6
+                    }
+                });
+                
+                // Initial map centered on Chennai (approx)
+                const chennai = { lat: 13.0827, lng: 80.2707 }; 
+                
+                map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: chennai,
+                    disableDefaultUI: true, // Clean map
+                    zoomControl: true,
+                    mapTypeControl: false,
+                    streetViewControl: false,
+                    fullscreenControl: false
+                });
+                
+                directionsRenderer.setMap(map);
+                
+                // Calculate the route using the new addresses
+                calculateAndDisplayRoute();
+
+            } catch (e) {
+                console.error("Error initializing Google Map:", e);
+                document.getElementById("map").innerHTML = "<div class='w-full h-full flex items-center justify-center bg-red-100 text-red-700'>Error loading map. Please check API key and console.</div>";
+            }
+        }
+
+        /**
+         * Calculates and displays the route on the map
+         */
+        function calculateAndDisplayRoute() {
+            // Don't run if the key is the placeholder
+            if (apiKey === "__GOOGLE_MAPS_API_KEY__" || apiKey === "YOUR_API_KEY_HERE") return;
+            
+            if (!directionsService || !directionsRenderer) {
+                // Wait a tiny bit for services to be ready if initMap is still running
+                setTimeout(calculateAndDisplayRoute, 100);
+                return;
+            }
+
+            // UPDATED hardcoded addresses
+            const start = 'Sairam Flats , Arcot Road, Valasravakkam , chennai';
+            const end = 'MIOT International , Manappakkam, Chennai';
+            
+            directionsService.route(
+                {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                },
+                (response, status) => {
+                    if (status === "OK") {
+                        directionsRenderer.setDirections(response);
+                    } else {
+                        console.error("Directions request failed due to " + status);
+                        // Show a fallback if directions fail
+                        map.setCenter({ lat: 13.0363, lng: 80.1737 }); // Approx midpoint
+                        document.getElementById("map").innerHTML = `<div class='w-full h-full flex items-center justify-center bg-yellow-100 text-yellow-800'>Could not calculate route. Status: ${status}</div>`;
+                    }
+                }
+            );
+        }
+
+        // Add a global error handler for the Google Maps script itself
+        window.gm_authFailure = () => {
+             console.error("Google Maps authentication failed. Check your API key.");
+             const mapEl = document.getElementById("map");
+             if (mapEl) {
+                mapEl.innerHTML = "<div class='w-full h-full flex items-center justify-center bg-red-100 text-red-700 p-4'>Google Maps authentication failed. Please check the API key.</div>";
+             }
+        };
+
+
+        // --- Page Listeners ---
+        // NEW: Wait for the custom event 'commonComponentsLoaded' from layout.js
+        document.addEventListener('commonComponentsLoaded', function() {
+            
+            // This code runs only AFTER the navbar and header are loaded.
+            
+            // NEW: Check for API key and show warning if not set
+            if (apiKey === "__GOOGLE_MAPS_API_KEY__" || apiKey === "YOUR_API_KEY_HERE") {
+                 console.warn("Google Maps API key is not set. Map will not load.");
+                 const mapEl = document.getElementById("map");
+                 if(mapEl) {
+                    mapEl.innerHTML = "<div class='w-full h-full flex items-center justify-center bg-yellow-100 text-yellow-800 p-4 text-center'><b>Map Error:</b> API Key is not set.</div>";
+                 }
+            }
+
+
+            // Handle Ambulance Selection
+            document.querySelectorAll('.ambulance-option + label').forEach(label => {
+                label.addEventListener('click', () => {
+                    const ambulanceType = label.querySelector('h3').textContent;
+                    console.log('Selected:', ambulanceType);
+                    showFeedback(`Selected: ${ambulanceType}`); // showFeedback is global
+                });
+            }); 
+            
+            // Handle Book Now Button Click
+            document.getElementById('book-now-button').addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent form submission for demo
+        
+                console.log('Booking...');
+        
+                // In a real app, this would proceed to payment or a success screen
+                // showFeedback('Booking confirmed! (Demo only)');
+                window.location.href = '05-ambulance-booking-overview.html';
+            });	
+
+        }); // End of 'commonComponentsLoaded' listener
+	</script>
+
+</body>
+</html>

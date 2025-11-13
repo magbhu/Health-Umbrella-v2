@@ -1,0 +1,54 @@
+<!-- 
+  This is the reusable navigation component.
+  It will be loaded into the <div id="navbar-placeholder"></div> on each page.
+  The 'data-active-link' attribute on the placeholder div will control which link is highlighted.
+-->
+<aside class="w-full lg:w-64 bg-white shadow-lg 
+               order-2 lg:order-1 
+               fixed bottom-0 left-0 z-50 lg:relative lg:h-screen 
+               border-t border-gray-200 lg:border-t-0 lg:border-r">
+    
+    <!-- Logo (Desktop Only) -->
+    <div class="hidden lg:flex items-center justify-center h-20 shadow-sm space-x-2">
+        <img src="assets/central-logo.jpg" 
+             onerror="this.src='https://placehold.co/100x40/FFFFFF/4F46E5?text=HU&font=inter'"
+             alt="Health Umbrella Logo" 
+             class="h-10">
+        <span class="text-xl font-bold text-gray-800">Health Umbrella</span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="flex justify-around lg:flex-col lg:mt-8">
+        
+        <!-- Nav Item: Home -->
+        <a href="01-homepage.html" data-link-id="home" class="nav-link flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Home</span>
+        </a>
+
+        <!-- Nav Item: My Bookings -->
+        <a href="08-booking-view.html" data-link-id="bookings" class="nav-link flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+            <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">My Bookings</span>
+        </a>
+
+        <!-- Nav Item: Call Us -->
+        <a href="10-call-us.html" data-link-id="call" class="nav-link flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Call Us</span>
+        </a>
+
+        <!-- Nav Item: Profile -->
+        <a href="09-profile-page.html" data-link-id="profile" class="nav-link flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Profile</span>
+        </a>
+
+        <!-- Nav Item: Logout -->
+        <a href="00-login-page.html" data-link-id="logout" class="nav-link flex flex-col items-center justify-center p-3 lg:flex-row lg:justify-start lg:px-6 lg:py-4 text-gray-600 hover:bg-gray-100 hover:text-gray-900">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            <span class="text-xs mt-1 lg:text-base lg:mt-0 lg:ml-4">Logout</span>
+        </a>
+
+    </nav>
+</aside>

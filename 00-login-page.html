@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella - Login</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      NEW: Link to the global layout stylesheet 
+      Removes all the inline <style> tags
+    -->
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex min-h-screen">
+        
+        <!-- Left Panel (Branding, Logo, Services) -->
+        <div class="hidden lg:flex w-1/2 brand-gradient text-white p-12 flex-col justify-around">
+            <div>
+                <!-- Logo -->
+                <img src="assets/central-logo.jpg" 
+                     onerror="this.src='https://placehold.co/300x70/FFFFFF/4F46E5?text=Health+Umbrella+Logo&font=inter'"
+                     alt="Health Umbrella Logo" 
+                     class="w-48 mb-12 bg-white p-4 rounded-lg shadow-md">
+
+                <!-- Banner Text -->
+                <h1 class="text-4xl font-bold leading-tight mb-6">
+                    "single, trusted, and reliable digital platform that simplifies access to essential health, emergency, and ancillary services"
+                </h1>
+              
+            </div>
+
+            <!-- Static Service Icon Grid -->
+            <!-- The styles for this are now in layout.css -->
+            <div class="static-circle-container" style="--orbit-radius: 160px;"> <!-- Orbit radius -->
+                <!-- Central Logo -->
+                <div class="central-logo" style="background-image: url('assets/central-logo.jpg');">
+                     <!-- Fallback text/icon if image fails -->
+                </div>
+        
+                <!-- 8 Static Icons -->
+                <!-- Icon 1 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(0deg)), calc(var(--orbit-radius) * sin(0deg)));">
+                    <img src="assets/Ambulance.jpg" alt="Ambulance" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Ambulance'">
+                </div>
+                <!-- Icon 2 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(45deg)), calc(var(--orbit-radius) * sin(45deg)));">
+                    <img src="assets/Hospital.jpg" alt="Hospital" onerror="this.src='https://placehold.co/80x80/E6FFFA/2C7A7B?text=Hospital'">
+                </div>
+                <!-- Icon 3 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(90deg)), calc(var(--orbit-radius) * sin(90deg)));">
+                    <img src="assets/Homecare.jpg" alt="Homecare" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Homecare'">
+                </div>
+                <!-- Icon 4 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(135deg)), calc(var(--orbit-radius) * sin(135deg)));">
+                    <img src="assets/Lab.jpg" alt="Lab" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Lab'">
+                </div>
+                <!-- Icon 5 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(180deg)), calc(var(--orbit-radius) * sin(180deg)));">
+                    <img src="assets/Funeral.jpg" alt="Funeral" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Funeral'">
+                </div>
+                <!-- Icon 6 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(225deg)), calc(var(--orbit-radius) * sin(225deg)));">
+                    <img src="assets/Physio.jpg" alt="Physio" onerror="this.src='https://placehold.co/80x80/EBF8FF/3182CE?text=Physio'">
+                </div>
+                <!-- Icon 7 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(270deg)), calc(var(--orbit-radius) * sin(270deg)));">
+                    <img src="assets/Clinic.jpg" alt="Clinic" onerror="this.src='https://placehold.co/80x80/E6FFFA/2C7A7B?text=Clinic'">
+                </div>
+                <!-- Icon 8 -->
+                <div class="static-icon" style="transform: translate(calc(var(--orbit-radius) * cos(315deg)), calc(var(--orbit-radius) * sin(315deg)));">
+                    <img src="assets/Emergency.jpg" alt="Emergency" onerror="this.src='https://placehold.co/80x80/FEF2F2/DC2626?text=Emergency'">
+                </div>
+            </div>
+            <!-- END Static Grid -->
+
+        </div>
+
+        <!-- Right Panel (Login Form) -->
+        <div class="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 lg:p-12">
+            <div class="w-full max-w-md">
+                
+                <!-- Mobile-only Logo -->
+                <div class="lg:hidden mb-8 text-center">
+                    <img src="assets/central-logo.jpg" 
+                         onerror="this.src='https://placehold.co/200x46/FFFFFF/4F46E5?text=Health+Umbrella+Logo&font=inter'"
+                         alt="Health Umbrella Logo" 
+                         class="w-40 mx-auto bg-gray-100 p-3 rounded-lg shadow-sm">
+                </div> 
+				<h4 class="text-3xl font-bold text-gray-900 mb-4">One Platform. All Your Health Care Needs</h4> 
+				<p>
+				</p>
+				<p>
+				</p>
+			    <h2 class="text-3xl font-bold text-gray-900 mb-4">Welcome to Health Umbrella</h2>
+                <p class="text-gray-600 mb-8">Please login to access your account.</p>
+
+                <!-- Login Form -->
+                <form id="login-form">
+                    <div class="space-y-6">
+                        <!-- Username -->
+                        <div>
+                            <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                            <input type="text" id="username" name="username" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+                                   placeholder="e.g., 'demo'">
+                        </div>
+                        
+                        <!-- Password -->
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                            <input type="password" id="password" name="password" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+                                   placeholder="e.g., '1234'">
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="error-message" class="hidden text-sm text-center font-medium text-red-600 bg-red-50 p-3 rounded-lg">
+                            <!-- Error text will be inserted here by JS -->
+                        </div>
+
+                        <!-- Login Button -->
+                        <div>
+                            <button type="submit" id="login-button" 
+                                    class="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <p class="text-sm text-gray-500 text-center mt-8">
+                    Don't have an account? <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+      This page does NOT load layout.js because it doesn't need
+      the navbar or header components.
+      Its own script is self-contained.
+    -->
+    <script>
+        // Wait for the DOM to be fully loaded before attaching event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Login Script
+            const loginForm = document.getElementById('login-form');
+            
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    // Prevent the form from submitting normally
+                    event.preventDefault(); 
+                    
+                    // Get the values from the form
+                    const usernameInput = document.getElementById('username');
+                    const passwordInput = document.getElementById('password');
+                    const errorMessage = document.getElementById('error-message');
+        
+                    const username = usernameInput.value.trim();
+                    const password = passwordInput.value.trim();
+        
+                    // Check for dummy credentials
+                    if (username === 'demo' && password === '1234') {
+                        // Success: Hide error and redirect to homepage
+                        errorMessage.classList.add('hidden');
+                        console.log('Login successful! Redirecting...');
+                        
+                        // --- NAVIGATION ---
+                        window.location.href = '01-homepage.html';
+                        // ------------------
+        
+                    } else {
+                        // Failure: Show error message
+                        errorMessage.textContent = 'Invalid username or password. Please try again.';
+                        errorMessage.classList.remove('hidden');
+                        
+                        // Clear password field for security
+                        passwordInput.value = '';
+                    }
+                });
+            } else {
+                console.error('Login form not found!');
+            }
+
+        });
+    </script>
+
+</body>
+</html>
