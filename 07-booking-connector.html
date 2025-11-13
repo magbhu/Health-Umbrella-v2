@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Umbrella - Select Vehicle</title>
+    <title>Health Umbrella - Booking Tracking</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
@@ -34,13 +34,33 @@
                             <div class="w-5 h-5 rounded-full bg-red-500 border-2 border-red-200"></div>
                         </div>
                         <div class="flex-1 space-y-4">
-                            <div>
-                                <p class="text-xs text-gray-500 uppercase font-medium">Pickup</p>
-                                <p class="font-semibold text-gray-900 leading-snug">Sai ram apartments, 96, Arcot Rd, Venkata Subramanya Nagar, ...</p>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-medium">Pickup</p>
+                                    <p class="font-semibold text-gray-900 leading-snug">Sai ram apartments, 96, Arcot Rd, Venkata Subramanya Nagar, ...</p>
+                                </div>
+                                <div class="flex space-x-1 pl-2">
+                                    <button class="p-2 text-gray-500 hover:text-gray-800 rounded-full hover:bg-gray-100">
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 rounded-full hover:bg-indigo-50">
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    </button>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-xs text-gray-500 uppercase font-medium">Dropoff</p>
-                                <p class="font-semibold text-gray-900 leading-snug">MIOT International, Manapakkam, Chennai, Tamil Nadu</p>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-medium">Dropoff</p>
+                                    <p class="font-semibold text-gray-900 leading-snug">MIOT International, Manapakkam, Chennai, Tamil Nadu</p>
+                                </div>
+                                <div class="flex space-x-1 pl-2">
+                                    <button class="p-2 text-gray-500 hover:text-gray-800 rounded-full hover:bg-gray-100">
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 rounded-full hover:bg-indigo-50">
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,140 +76,25 @@
                     </button>
                 </section>
 
-                <section>
-                    <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Select an Ambulance</h2>
-                    
-                    <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center mb-4">
-                        <div class="flex items-center space-x-3">
-                            <img src="https://placehold.co/40x40/EBF8FF/3182CE?text=Amb" alt="Ambulance Icon" class="w-10 h-10 rounded-lg">
-                            <span class="font-semibold text-gray-800">Patient Transfer</span>
-                        </div>
-                        <button class="p-2 text-gray-500">
-                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-                        </button>
-                    </div>
-
-                    <div class="space-y-4">
-                        
-                        <div>
-                            <input type="radio" name="ambulance_type" id="amb_small" class="hidden ambulance-option" checked>
-                            <label for="amb_small" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
-                                <div class="flex space-x-3">
-                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">25</div>
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-start">
-                                            <div class="flex items-center space-x-3">
-                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=Omni" alt="Small Ambulance" class="w-16 h-10 object-cover rounded">
-                                                <div>
-                                                    <h3 class="font-semibold text-gray-900">Small</h3>
-                                                    <p class="text-xs text-gray-600">Omni / Eco Vehicle</p>
-                                                </div>
-                                            </div>
-                                            <div class="text-right flex-shrink-0">
-                                                <p class="text-sm font-semibold text-pink-600">30 mins</p>
-                                                <p class="text-lg font-bold text-indigo-600">₹ 500</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3">
-                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher, Wheelchai...</p>
-                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div>
-                            <input type="radio" name="ambulance_type" id="amb_large" class="hidden ambulance-option">
-                            <label for="amb_large" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
-                                <div class="flex space-x-3">
-                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">9</div>
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-start">
-                                            <div class="flex items-center space-x-3">
-                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=Tempo" alt="Large Ambulance" class="w-16 h-10 object-cover rounded">
-                                                <div>
-                                                    <h3 class="font-semibold text-gray-900">Large</h3>
-                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
-                                                </div>
-                                            </div>
-                                            <div class="text-right flex-shrink-0">
-                                                <p class="text-sm font-semibold text-pink-600">27 mins</p>
-                                                <p class="text-lg font-bold text-indigo-600">₹ 1500</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3">
-                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher,...</p>
-                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div>
-                            <input type="radio" name="ambulance_type" id="amb_als" class="hidden ambulance-option">
-                            <label for="amb_als" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
-                                <div class="flex space-x-3">
-                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">16</div>
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-start">
-                                            <div class="flex items-center space-x-3">
-                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=ALS" alt="ALS Ambulance" class="w-16 h-10 object-cover rounded">
-                                                <div>
-                                                    <h3 class="font-semibold text-gray-900">Advanced Life Support (ALS)</h3>
-                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
-                                                </div>
-                                            </div>
-                                            <div class="text-right flex-shrink-0">
-                                                <p class="text-sm font-semibold text-pink-600">24 mins</p>
-                                                <p class="text-lg font-bold text-indigo-600">₹ 3000</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3">
-                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Advanced ...</p>
-                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div>
-                            <input type="radio" name="ambulance_type" id="amb_bls" class="hidden ambulance-option">
-                            <label for="amb_bls" class="block bg-white rounded-lg shadow-sm p-4 border-2 border-transparent cursor-pointer transition-all duration-300">
-                                <div class="flex space-x-3">
-                                    <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xs">9</div>
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-start">
-                                            <div class="flex items-center space-x-3">
-                                                <img src="https://placehold.co/64x40/F3F4F6/9CA3AF?text=BLS" alt="BLS Ambulance" class="w-16 h-10 object-cover rounded">
-                                                <div>
-                                                    <h3 class="font-semibold text-gray-900">Basic Life Support (BLS)</h3>
-                                                    <p class="text-xs text-gray-600">Tempo Traveller</p>
-                                                </div>
-                                            </div>
-                                            <div class="text-right flex-shrink-0">
-                                                <p class="text-sm font-semibold text-pink-600">462 mins</p>
-                                                <p class="text-lg font-bold text-indigo-600">₹ 2500</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3">
-                                            <p class="text-xs text-gray-600">Includes: First Aid Kit, Oxygen cylinder, Stretcher, W...</p>
-                                            <a href="#" class="text-xs text-indigo-600 font-semibold hover:underline" onclick="event.stopPropagation()">See More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-
-                    </div>
+                <section class="mb-8">
+                    <button id="view-booking-button" class="w-full bg-indigo-600 text-white font-semibold py-4 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                        View Booking
+                    </button>
                 </section>
 
-                <section class="mt-8">
-                    <button id="book-now-button" class="w-full bg-indigo-600 text-white font-semibold py-4 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
-                        Book Now
-                    </button>
+
+                <section class="mt-12 pt-8 border-t border-gray-300">
+                    <div class="flex flex-col items-center justify-center text-center">
+                        
+                        <div class="space-x-2 mb-6">
+                            <div class="loader-dot loader-dot-1"></div>
+                            <div class="loader-dot loader-dot-2"></div>
+                            <div class="loader-dot loader-dot-3"></div>
+                        </div>
+
+                        <p class="text-xl font-bold text-indigo-700 mb-2">Finding Driver...</p>
+                        <p class="text-base font-semibold text-green-600">Waiting For Booking Accept</p>
+                    </div>
                 </section>
 
             </div>
@@ -205,29 +110,19 @@
             // This code runs only AFTER the navbar and header are loaded.
 
             // The showFeedback function is now global (defined in layout.js)
-
-            // Handle Ambulance Selection
-            document.querySelectorAll('.ambulance-option + label').forEach(label => {
-                label.addEventListener('click', () => {
-                    const ambulanceType = label.querySelector('h3').textContent;
-                    console.log('Selected:', ambulanceType);
-                    showFeedback(`Selected: ${ambulanceType}`);
-                });
-            }); 
             
-             // Handle Book Now Button Click
-             document.getElementById('book-now-button').addEventListener('click', (e) => {
-               e.preventDefault(); // Prevent form submission for demo
+            // Handle View Booking Button Click
+            document.getElementById('view-booking-button').addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent form submission for demo
         
-               console.log('Booking...');
+                console.log('View Booking Clicked');
         
-              // In a real app, this would proceed to payment or a success screen
-              // showFeedback('Booking confirmed! (Demo only)');
-              window.location.href = '05-ambulance-booking-overview.html';
-            });	
-
+                // In a real app, this might open a modal with full details
+                // showFeedback('Opening booking details... (Demo only)');
+                window.location.href = '08-booking-view.html';
+            });
+            
         }); // End of 'commonComponentsLoaded' listener
-	</script>
-
+     </script>
 </body>
 </html>
